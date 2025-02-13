@@ -1,0 +1,105 @@
+/* General form styling */
+.login-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+  }
+  
+  .login-form-wrapper {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  .input-group label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box;
+  }
+  
+  .input-group input:focus {
+    border-color: #4CAF50;
+  }
+  
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .button-group button {
+    padding: 12px;
+    font-size: 14px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .button-group button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .button-group button:hover {
+    background-color: #45a049;
+  }
+  
+  button[type="button"] {
+    background-color: #007bff;
+  }
+  
+  button[type="button"]:hover {
+    background-color: #0056b3;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  /* Small screen (mobile) styling */
+  @media (max-width: 500px) {
+    .login-form-wrapper {
+      width: 90%;
+    }
+  
+    .input-group input {
+      font-size: 16px;
+      padding: 10px;
+    }
+  
+    .button-group button {
+      font-size: 16px;
+      padding: 14px;
+    }
+  }
