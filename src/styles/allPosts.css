@@ -1,87 +1,65 @@
-/* Container for the entire post list */
-.all-posts-container {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  /* Header for the posts page */
-  .all-posts-container h1 {
-    font-size: 2rem;
-    color: #333;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  /* Individual post container */
-  .post-container {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  
-  .post-container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Post title (description) */
-  .post-container h3 {
-    font-size: 1.5rem;
-    color: #333;
-    margin: 10px 0;
-  }
-  
-  /* Post creation date */
-  .post-container p {
-    font-size: 1rem;
-    color: #777;
-    margin: 5px 0;
-  }
-  
-  /* Post image */
-  .post-container img {
-    max-width: 100%;
-    max-height: 300px;
-    object-fit: cover;
-    margin-top: 15px;
-    border-radius: 8px;
-  }
-  
-  /* Post user name and likes */
-  .post-container .post-user-likes {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 15px;
-  }
-  
-  /* Likes section */
-  .post-container .likes {
-    font-size: 1.1rem;
-    color: #555;
-    font-weight: bold;
-  }
-  
-  /* User name styling */
-  .post-container .user-name {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #2d2d2d;
-  }
-  
-  /* Loading/Error Message Styles */
-  .loading-message,
-  .error-message {
-    font-size: 1.2rem;
-    color: #f44336;
-    text-align: center;
-    margin-top: 20px;
-  }
-  
+/* allPosts.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  padding: 10px;
+}
+
+.post {
+  background-color: #f9f9f9;
+  padding: 15px;
+  margin: 10px 0;
+  width: 80%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.post h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-top: 10px;
+}
+
+.post p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.likes {
+  font-weight: bold;
+  color: #e91e63;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination button:disabled {
+  background-color: #dcdcdc;
+  cursor: not-allowed;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
