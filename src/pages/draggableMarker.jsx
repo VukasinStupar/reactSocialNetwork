@@ -7,7 +7,7 @@ import "leaflet/dist/leaflet.css";
 import markerIcon from "leaflet/dist/images/marker-icon.png";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";
 
-// Fix for default marker icon
+
 const defaultIcon = L.icon({
   iconUrl: markerIcon,
   shadowUrl: markerShadow,
@@ -34,7 +34,7 @@ function DraggableMarker({
         }
       },
       click() {
-        onClick(); // This will call the passed onClick or the default no-op function
+        onClick(); 
       },
     }),
     [setPosition, onClick]

@@ -16,6 +16,7 @@ function MapClickHandler({ setCoordinates }) {
 
   return null;
 }
+
 const CreatePost = () => {
   const navigate = useNavigate();
   const [post, setPost] = useState({
@@ -38,7 +39,7 @@ const CreatePost = () => {
 
       if (!validateFile(file)) {
         alert("Please upload a valid image file (PNG, JPG, JPEG, GIF).");
-        event.target.value = ""; // Reset input field
+        event.target.value = ""; 
         return;
       }
 
@@ -54,7 +55,7 @@ const CreatePost = () => {
   const handleMapClick = (latLng) => {
     setLatitude(latLng.lat);
     setLongitude(latLng.lng);
-    setMarkerPosition(latLng); // Update the marker's position
+    setMarkerPosition(latLng); 
   };
 
 

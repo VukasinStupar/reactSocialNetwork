@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/login.css";
+import { loginUser } from "../services/AuthService";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -18,46 +19,31 @@ const Login = () => {
     });
   };
 
-  const onLoginClickHandler = async (event) => {
-    event.preventDefault();
-    setLoading(true); 
-    try {
-      const response = await fetch("http://localhost:8080/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(user),
-      });
+  
 
-      if (response.status === 400) {
-        setError("Wrong username or password!");
-      } else if (response.status === 401) {
-        setError("Cannot login!");
-      } else if (response.ok) {
-        const data = await response.json();
-        const token = `Bearer ${data.accessToken}`;
-        localStorage.setItem("token", token);
-        localStorage.setItem("loggedRole", data.role); 
-
-      
-        if (data.role === "ROLE_SYSTEM_ADMIN") {
-          navigate("/complaintsToRespond");
-        } else {
-          navigate("/createPost");
-        }
-      }
-    } catch (error) {
-      console.error("Login error:", error);
-      setError("Something went wrong!");
-    } finally {
-      setLoading(false); // Re-enable button after the operation completes
-    }
+  const onRegisterClickHandler = () => {
+    navigate("/register");
   };
 
-  const onRegistrateClickHandler = () => {
-    navigate("/register");
+
+  const onLoginClickHandler = async (event) => {
+    event.preventDefault();
+    setError("");
+    setLoading(true);
+
+    try {
+      const response = await loginUser(user);
+
+      const token = response.data.accessToken;
+      localStorage.setItem("token", token);
+      localStorage.setItem("loggedRole", response.role);
+
+      navigate("/createPost");
+    } catch (error) {
+      setError(error.message || "Login failed. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -70,15 +56,17 @@ const Login = () => {
               onChange={handleChange}
               name="username"
               type="text"
+              value={user.username}
               required
             />
           </div>
           <div className="input-group">
-            <label htmlFor="password" className="item">Password</label>
+            <label htmlFor="password">Password</label>
             <input
               onChange={handleChange}
               name="password"
               type="password"
+              value={user.password}
               required
             />
           </div>
@@ -86,10 +74,10 @@ const Login = () => {
           {error && <div className="error-message">{error}</div>}
 
           <div className="button-group">
-            <button className="item" type="submit" disabled={loading}>
+            <button type="submit" disabled={loading}>
               {loading ? "Logging in..." : "Login"}
             </button>
-            <button type="button" onClick={onRegistrateClickHandler}>
+            <button type="button" onClick={onRegisterClickHandler}>
               Don't have an account?
             </button>
           </div>

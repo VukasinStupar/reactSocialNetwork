@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/register.css";
+import {  registerUser } from "../services/AuthService";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -20,29 +21,19 @@ const Register = () => {
     });
   };
 
+  
   const onRegisterClickHandler = async (event) => {
     event.preventDefault();
 
-    const response = await fetch("http://localhost:8080/auth/signup", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify(user),
-    });
-
-    if (response.status === 409) {
-      return window.alert("Username already exists!");
+    try {
+      await registerUser(user); 
+      window.alert("Registration successful! Please check your email to activate your account.");
+      navigate("/login");
+    } catch (error) {
+      window.alert(error.message);
     }
-
-    if (!response.ok) {
-      return window.alert("Error during registration!");
-    }
-
-    window.alert("Registration successful! Please check your email to activate your account.");
-    navigate("/login");
   };
+  
 
   return (
     <div className="register-form-container">

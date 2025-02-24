@@ -5,6 +5,9 @@ import Register from "./pages/register";
 import ActivateAccount from "./pages/activateAccount";
 import CreatePost from "./pages/createPost";
 import AllPosts from "./pages/allPosts";
+import AllUsers from "./pages/allUsers";
+import Messages from "./pages/messages";
+
 
 function App() {
   return (
@@ -15,6 +18,8 @@ function App() {
         <Route path="/activateAccount/:token" element={<ActivateAccount />} /> 
         <Route path="/createPost" element={<CreatePost />} /> 
         <Route path="/allPosts" element={<AllPosts />} /> 
+        <Route path="/allUsers" element={<AllUsers />} /> 
+        <Route path="/messagesForUser" element={<Messages />} /> 
       </Routes>
     </Router>
   );
