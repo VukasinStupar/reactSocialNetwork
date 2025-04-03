@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/login.css";
 import { loginUser } from "../services/AuthService";
+import { useAuth } from "../context/AuthContrext";
 
 const Login = () => {
+  const { login } = useAuth();
+
   const navigate = useNavigate();
   const [user, setUser] = useState({
     username: "",
@@ -37,6 +40,8 @@ const Login = () => {
       const token = response.data.accessToken;
       localStorage.setItem("token", token);
       localStorage.setItem("loggedRole", response.role);
+
+      login(token);
 
       navigate("/createPost");
     } catch (error) {

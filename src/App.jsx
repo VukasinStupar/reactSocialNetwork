@@ -7,6 +7,8 @@ import CreatePost from "./pages/createPost";
 import AllPosts from "./pages/allPosts";
 import AllUsers from "./pages/allUsers";
 import Messages from "./pages/messages";
+import Analytics from "./pages/analistics";
+import Chat from "./pages/chat";
 
 
 function App() {
@@ -19,7 +21,9 @@ function App() {
         <Route path="/createPost" element={<CreatePost />} /> 
         <Route path="/allPosts" element={<AllPosts />} /> 
         <Route path="/allUsers" element={<AllUsers />} /> 
-        <Route path="/messagesForUser" element={<Messages />} /> 
+        <Route path="/messagesForUser" element={<Messages />} />
+        <Route path="/analistics" element={<Analytics />} /> 
+        <Route path="/messages/:userId" element={<Chat />} />
       </Routes>
     </Router>
   );

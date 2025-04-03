@@ -1,0 +1,28 @@
+.analytics-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.analytics-item {
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+p {
+    font-size: 16px;
+    margin: 4px 0;
+}
+
+strong {
+    font-weight: bold;
+}
