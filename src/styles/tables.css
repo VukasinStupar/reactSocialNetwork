@@ -1,0 +1,56 @@
+/* Style for all tables in the application */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    color: #fff; /* White text for contrast against dark background */
+    background-color: #2c2c2c; /* Dark background for the table */
+    border-radius: 8px;
+  }
+  
+  /* Style for all table headers */
+  th {
+    background-color: #4CAF50; /* Green background for the header */
+    color: white; /* White text color */
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  /* Style for all table rows */
+  tr {
+    background-color: #444; /* Slightly lighter dark background for rows */
+  }
+  
+  /* Style for all table data cells */
+  td {
+    padding: 12px 15px;
+    border-top: 1px solid #ddd; /* Light border for rows */
+  }
+  
+  /* Hover effect for all table rows */
+  tr:hover {
+    background-color: #555; /* Lighter shade on hover */
+  }
+  
+  /* Style for all pagination buttons (if applicable) */
+  button {
+    padding: 8px 15px;
+    margin: 10px 5px;
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    background-color: #aaa; /* Disabled button color */
+    cursor: not-allowed;
+  }
+  
+  button:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+  }
+  

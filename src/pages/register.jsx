@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/register.css";
-import {  registerUser } from "../services/AuthService";
+import "../styles/forms.css";   
+import { registerUser } from "../services/AuthService";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -9,7 +9,7 @@ const Register = () => {
     name: "",
     surname: "",
     username: "",
-    adress: "",
+    address: "",
     email: "",
     password: "",
   });
@@ -21,7 +21,6 @@ const Register = () => {
     });
   };
 
-  
   const onRegisterClickHandler = async (event) => {
     event.preventDefault();
 
@@ -33,12 +32,11 @@ const Register = () => {
       window.alert(error.message);
     }
   };
-  
 
   return (
-    <div className="register-form-container">
-      <div className="register-form-wrapper">
-        <form className="register-form" onSubmit={onRegisterClickHandler}>
+    <div className="form-container">
+      <div className="form-wrapper">
+        <form className="form" onSubmit={onRegisterClickHandler}>
           <div className="input-group">
             <label htmlFor="name">Name</label>
             <input
@@ -73,9 +71,9 @@ const Register = () => {
             <label htmlFor="address">Address</label>
             <input
               onChange={handleChange}
-              name="adress"
+              name="address"
               type="text"
-              value={user.adress}
+              value={user.address}
               required
             />
           </div>

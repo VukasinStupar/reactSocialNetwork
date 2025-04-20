@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { fetchUsers } from '../services/UserService'; // Adjust the path if necessary
-
+import "../styles/tables.css";
 
 function AllUsers() {
     const [users, setUsers] = useState([]);

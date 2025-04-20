@@ -1,7 +1,7 @@
 import React from 'react';
 
 import '../styles/messageList.css';
-import { useAuth } from '../context/AuthContrext';
+import { useAuth } from '../context/AuthContext';
 
 const Message = ({ message }) => {
     const { user } = useAuth();

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchApplicationAnalytics } from '../services/analisticsService';
-import "../styles/analistics.css";
+import "../styles/tables.css";
 
 const Analytics = () => {
     const [analytics, setAnalytics] = useState(null);

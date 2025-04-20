@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/login.css";
+import "../styles/forms.css";  // Updated to reference the new CSS
 import { loginUser } from "../services/AuthService";
-import { useAuth } from "../context/AuthContrext";
+import { useAuth } from "../context/AuthContext";
 
 const Login = () => {
   const { login } = useAuth();
@@ -22,12 +22,9 @@ const Login = () => {
     });
   };
 
-  
-
   const onRegisterClickHandler = () => {
     navigate("/register");
   };
-
 
   const onLoginClickHandler = async (event) => {
     event.preventDefault();
@@ -52,9 +49,9 @@ const Login = () => {
   };
 
   return (
-    <div className="login-form-container">
-      <div className="login-form-wrapper">
-        <form className="login-form" onSubmit={onLoginClickHandler}>
+    <div className="form-container">
+      <div className="form-wrapper">
+        <form className="form" onSubmit={onLoginClickHandler}>
           <div className="input-group">
             <label htmlFor="username">Username</label>
             <input

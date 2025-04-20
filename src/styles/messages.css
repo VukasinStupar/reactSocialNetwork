@@ -1,111 +1,34 @@
-/* General Styles */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #e8f4f9;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* styles/messages.css */
 
 .messages-container {
-    max-width: 900px;
-    margin: 50px auto;
-    padding: 30px;
-    background-color: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transform: translateY(0);
-    transition: transform 0.3s ease-in-out;
-}
-
-.messages-container:hover {
-    transform: translateY(-10px);
-}
-
-h2 {
-    text-align: center;
-    font-size: 36px;
-    color: #444;
-    margin-bottom: 40px;
-    font-weight: 600;
-    letter-spacing: 1px;
-}
-
-.user-card {
-    background-color: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  .user-card {
+    background-color: #f9f9f9;
+    border-left: 6px solid #4CAF50;
     border-radius: 10px;
-    border: 1px solid #e1e4e8;
-    padding: 25px;
-    margin-bottom: 20px;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.user-card:hover {
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    transform: translateY(-5px);
-}
-
-.user-card p {
-    font-size: 16px;
-    color: #555;
-    line-height: 1.6;
-    margin: 10px 0;
-}
-
-.user-card p strong {
-    color: #2d5c6c;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.user-card p:last-child {
-    margin-bottom: 0;
-}
-
-/* Border at the bottom of the card */
-.user-card p + p {
-    border-top: 1px solid #f4f4f4;
-    padding-top: 10px;
-}
-
-/* Subtle hover effect */
-.user-card p:hover {
-    color: #2d5c6c;
-}
-
-/* Button */
-button {
-    padding: 12px 20px;
-    background-color: #28a745;
-    color: white;
-    font-size: 16px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #218838;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .messages-container {
-        padding: 20px;
-    }
-
-    .user-card {
-        padding: 15px;
-    }
-
-    h2 {
-        font-size: 28px;
-    }
-
-    .user-card p {
-        font-size: 14px;
-    }
-}
+    padding: 1.2rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .user-card:hover {
+    transform: translateY(-4px);
+  }
+  
+  .user-card p {
+    margin: 0.4rem 0;
+    color: #333;
+    font-size: 0.95rem;
+  }
+  
+  .user-card strong {
+    color: #2e7d32;
+  }
+  

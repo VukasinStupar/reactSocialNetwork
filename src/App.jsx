@@ -9,6 +9,7 @@ import AllUsers from "./pages/allUsers";
 import Messages from "./pages/messages";
 import Analytics from "./pages/analistics";
 import Chat from "./pages/chat";
+import GroupChat from "./pages/groupChat";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path="/messagesForUser" element={<Messages />} />
         <Route path="/analistics" element={<Analytics />} /> 
         <Route path="/messages/:userId" element={<Chat />} />
+        <Route path="/groupChat/:groupChatId" element={<GroupChat />} />
       </Routes>
     </Router>
   );

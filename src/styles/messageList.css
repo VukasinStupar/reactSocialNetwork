@@ -1,45 +1,55 @@
-
+/* Message List container */
 .message-list {
     display: flex;
     flex-direction: column;
     padding: 1rem;
     overflow-y: auto;
-    max-height: 70vh;
+    max-height: 150vh;
+    flex-grow: 1; /* Ensure it expands to take available height */
 }
 
+/* Each message container */
 .message-container {
     display: flex;
     margin-bottom: 0.5rem;
+    justify-content: flex-start; /* Ensure the message containers start aligned */
 }
 
+/* Sent message alignment */
 .sent {
     justify-content: flex-end;
 }
 
+/* Received message alignment */
 .received {
     justify-content: flex-start;
 }
 
+/* Message bubble styling */
 .message-bubble {
     max-width: 70%;
     padding: 0.75rem;
     border-radius: 1.5rem;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     word-break: break-word;
+    overflow-wrap: break-word; /* Ensure long words break into the next line */
 }
 
+/* Sent message bubble */
 .sent-bubble {
     background-color: #22c55e;
     color: white;
     border-top-right-radius: 0;
 }
 
+/* Received message bubble */
 .received-bubble {
     background-color: #e5e7eb;
     color: black;
     border-top-left-radius: 0;
 }
 
+/* Time styling */
 .message-time {
     font-size: 0.75rem;
     color: #6b7280;

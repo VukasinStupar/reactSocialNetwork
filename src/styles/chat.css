@@ -1,0 +1,69 @@
+/* styles/chat.css */
+
+.chatContainer {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.header {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #4CAF50;
+  margin-bottom: 1rem;
+}
+
+.messagesList {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+/* Scrollbar Styling */
+.messagesList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messagesList::-webkit-scrollbar-thumb {
+  background-color: #c2c2c2;
+  border-radius: 5px;
+}
+
+.inputField {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  transition: border-color 0.2s;
+}
+
+.inputField:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+.sendButton {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.8rem 1.4rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.sendButton:hover {
+  background-color: #45a049;
+}
