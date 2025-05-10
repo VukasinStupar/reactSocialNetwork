@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/forms.css";  // Updated to reference the new CSS
+import "../styles/forms.css";  
 import { loginUser } from "../services/AuthService";
 import { useAuth } from "../context/AuthContext";
 
@@ -40,7 +40,7 @@ const Login = () => {
 
       login(token);
 
-      navigate("/createPost");
+      navigate("/allUsers");
     } catch (error) {
       setError(error.message || "Login failed. Please try again.");
     } finally {

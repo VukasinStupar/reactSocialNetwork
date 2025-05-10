@@ -65,6 +65,8 @@ export async function request(url, data = {}, method = HttpMethod.GET, options =
   }
 }
 
+
+
 export async function connect(url, data, method, options) {
   switch (method) {
     case HttpMethod.GET:

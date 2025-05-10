@@ -1,43 +1,55 @@
-/* allPosts.css */
-
+/* Container for posts */
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px;
-  padding: 10px;
+  margin: 30px 0;
+  padding: 20px;
 }
 
+/* Post styling */
 .post {
-  background-color: #f9f9f9;
-  padding: 15px;
-  margin: 10px 0;
+  background-color: #1e2a47; /* Dark blue background for post */
+  padding: 20px;
+  margin: 15px 0;
   width: 80%;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow for modern look */
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.post:hover {
+  transform: translateY(-5px); /* Slight lift effect on hover */
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4); /* Bigger shadow on hover */
+}
+
+/* Post image */
 .post img {
   max-width: 100%;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
+/* Post title */
 .post h2 {
-  font-size: 1.5rem;
-  color: #333;
-  margin-top: 10px;
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-top: 15px;
 }
 
+/* Post content */
 .post p {
-  font-size: 1rem;
-  color: #555;
+  font-size: 1.2rem;
+  color: #ddd;
 }
 
+/* Likes style */
 .likes {
   font-weight: bold;
-  color: #e91e63;
+  color: #e91e63; /* Pinkish accent for likes */
 }
 
+/* Pagination styling */
 .pagination {
   display: flex;
   justify-content: center;
@@ -45,21 +57,22 @@
 }
 
 .pagination button {
-  padding: 10px 20px;
-  margin: 0 5px;
-  background-color: #007bff;
+  padding: 12px 24px;
+  margin: 0 10px;
+  background-color: #005f99; /* Darker blue for buttons */
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s ease;
 }
 
 .pagination button:disabled {
-  background-color: #dcdcdc;
+  background-color: #888;
   cursor: not-allowed;
 }
 
 .pagination button:hover:not(:disabled) {
-  background-color: #0056b3;
+  background-color: #0077cc; /* Lighter blue on hover */
+  transform: scale(1.05); /* Slight scale effect */
 }

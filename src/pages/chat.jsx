@@ -65,9 +65,9 @@ const Chat = () => {
     if (error) return <p>{error}</p>;
 
     return (
-        <div className="chatContainer"> {/* Applying chat container styles */}
+        <div className="chatContainer">
             <h2 className="header">Messages with User {userId}</h2>
-            <div className="messagesList"> {/* Updated messages list class */}
+            <div className="messagesList"> 
                 <MessagesList messages={messages} />
             </div>
             <div>
@@ -78,7 +78,7 @@ const Chat = () => {
                     placeholder="Type your message..."
                     className="inputField" 
                 />
-                <button onClick={handleSendMessage} className="sendButton"> {/* Adding sendButton class */}
+                <button onClick={handleSendMessage} className="sendButton">
                     Send
                 </button>
             </div>

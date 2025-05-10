@@ -1,28 +1,66 @@
+/* Analytics container */
 .analytics-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Lighter transparent background */
+    backdrop-filter: blur(20px); /* Subtle blur effect */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Soft white border with a slight glow */
+    color: #000; /* Changed to black text for better visibility */
+  }
+  
+  /* Section header */
+  .analytics-container h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #1a73e8; /* Bright blue color for the header */
+    border-bottom: 3px solid rgba(26, 115, 232, 0.6); /* Blue underline */
+    padding-bottom: 10px;
+    font-weight: 600;
+  }
+  
+  /* Individual analytics item */
+  .analytics-item {
+    margin-bottom: 30px;
     padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-}
-
-.analytics-item {
-    margin-bottom: 20px;
-}
-
-h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-h3 {
-    font-size: 20px;
-    margin-bottom: 8px;
-}
-
-p {
-    font-size: 16px;
-    margin: 4px 0;
-}
-
-strong {
+    border-radius: 15px;
+    background-color: rgba(0, 123, 255, 0.1); /* Soft blue background */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth hover effect */
+    border: 1px solid rgba(0, 123, 255, 0.3); /* Light blue border */
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.1); /* Subtle glow effect */
+  }
+  
+  /* Title of each analytics item */
+  .analytics-item h3 {
+    color: #1a73e8; /* Bright blue for titles */
+    margin-bottom: 15px;
     font-weight: bold;
-}
+  }
+  
+  /* Paragraph data blocks */
+  .analytics-item p {
+    background-color: rgba(0, 123, 255, 0.15); /* More vibrant light blue background */
+    padding: 10px 15px;
+    margin: 8px 0;
+    border-radius: 10px;
+    color: #000; /* Changed to black text for better readability */
+    font-size: 16px;
+    transition: background-color 0.3s; /* Smooth color transition */
+    border: 1px solid rgba(0, 123, 255, 0.2); /* Soft blue border */
+  }
+  
+  /* Hover effect for each data block */
+  .analytics-item p:hover {
+    background-color: rgba(0, 123, 255, 0.25); /* Slightly more vibrant blue on hover */
+    transform: translateX(4px); /* Subtle movement */
+    cursor: pointer; /* Pointer to show interaction */
+  }
+  
+  /* Adding a glowing effect to the container when hovered */
+  .analytics-container:hover {
+    box-shadow: 0 8px 24px rgba(26, 115, 232, 0.3); /* Blue glowing shadow */
+  }
+  

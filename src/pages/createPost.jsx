@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/forms.css";  
+import "../styles/forms.css";
 import { MapContainer, TileLayer, useMapEvent } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { LatLng } from "leaflet";
@@ -34,7 +34,7 @@ const CreatePost = () => {
       const file = files[0];
       if (!validateFile(file)) {
         alert("Please upload a valid image file (PNG, JPG, JPEG, GIF).");
-        event.target.value = ""; 
+        event.target.value = "";
         return;
       }
       setBunnyImage(file);
@@ -50,7 +50,7 @@ const CreatePost = () => {
   const handleMapClick = (latLng) => {
     setLatitude(latLng.lat);
     setLongitude(latLng.lng);
-    setMarkerPosition(latLng); 
+    setMarkerPosition(latLng);
   };
 
   const validateFile = (file) => {
@@ -60,15 +60,14 @@ const CreatePost = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // ... your existing submit logic ...
+    // Add your logic here
   };
 
   return (
     <div className="form-container">
       <div className="form-wrapper">
         <h2>Create a New Post</h2>
-        <form className="form">
-          
+        <form className="form" onSubmit={handleSubmit}>
           <div className="input-group">
             <label>Description</label>
             <input
@@ -92,45 +91,35 @@ const CreatePost = () => {
 
           <div className="input-group">
             <label>Latitude</label>
-            <input
-              type="text"
-              value={latitude}
-              readOnly
-            />
+            <input type="text" value={latitude} readOnly />
           </div>
 
           <div className="input-group">
             <label>Longitude</label>
-            <input
-              type="text"
-              value={longitude}
-              readOnly
-            />
+            <input type="text" value={longitude} readOnly />
           </div>
 
           <div className="input-group">
             <label>Location on Map</label>
-            <MapContainer
-              center={center}
-              zoom={13}
-              style={{ height: "400px", width: "100%" }}
-            >
-              <TileLayer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              />
-              <MapClickHandler setCoordinates={handleMapClick} />
-              <DraggableMarker
-                position={markerPosition}
-                setPosition={(newPosition) => {
-                  setLatitude(newPosition.lat);
-                  setLongitude(newPosition.lng);
-                  setMarkerPosition(newPosition);
-                }}
-                onClick={() => console.log("Marker clicked!")}
-                removeMarker={() => console.log("Marker removed!")}
-              />
-            </MapContainer>
+            <div className="map-wrapper">
+              <MapContainer center={center} zoom={13} scrollWheelZoom={true}>
+                <TileLayer
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                />
+                <MapClickHandler setCoordinates={handleMapClick} />
+                <DraggableMarker
+                  position={markerPosition}
+                  setPosition={(newPosition) => {
+                    setLatitude(newPosition.lat);
+                    setLongitude(newPosition.lng);
+                    setMarkerPosition(newPosition);
+                  }}
+                  onClick={() => console.log("Marker clicked!")}
+                  removeMarker={() => console.log("Marker removed!")}
+                />
+              </MapContainer>
+            </div>
           </div>
 
           <div className="button-group">

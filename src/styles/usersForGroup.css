@@ -1,0 +1,196 @@
+/* users-group-container with improved background and contrast */
+.users-group-container {
+  padding: 2rem;
+  background-color: #ffffff; /* Clean white background for better contrast */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Title of the user group section with clear contrast */
+.users-group-title {
+  font-size: 2rem;
+  color: #333333; /* Dark grey for title to ensure readability */
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+/* Modern styling for the user table with clear contrast */
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff; /* White background for table for clear text contrast */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Table headers with darker background for contrast */
+.users-table th {
+  padding: 1.2rem;
+  text-align: left;
+  background-color: #2c3e50; /* Darker background for header */
+  color: #ffffff; /* White text for high contrast */
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Table cell styles with higher contrast */
+.users-table td {
+  padding: 1.2rem;
+  text-align: left;
+  color: #2c3e50; /* Dark text for better readability */
+  font-size: 1rem;
+  border-bottom: 1px solid #f0f0f0;
+  background-color: #ffffff; /* White background for each row by default */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Distinct hover effect for table rows */
+.users-table tr:hover {
+  background-color: #f0f8ff; /* Light blue background on hover to contrast the white */
+  cursor: pointer;
+  transform: translateY(-2px); /* Slight elevation effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Soft shadow on hover */
+}
+
+/* Selected row effect with more contrast */
+.users-table tr.selected {
+  background-color: #ffddcc; /* Softer red background for selection */
+}
+
+.users-table tr.selected td {
+  color: #000000;
+  font-weight: 600;
+}
+
+/* Styling for remove cell to align button to the right */
+.users-table td.remove-cell {
+  text-align: right;
+}
+
+/* Modern remove button with better contrast and hover effect */
+.remove-btn-inline {
+  background-color: #e74c3c; /* Red for delete button */
+  color: white;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect for remove button */
+.remove-btn-inline:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+/* Pagination controls with clearer contrast and buttons */
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Pagination button with high contrast */
+.pagination-controls button {
+  padding: 0.75rem 1.2rem;
+  background-color: #3498db; /* Blue background for pagination */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect for pagination buttons */
+.pagination-controls button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+/* User actions section with better button contrast */
+.user-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+/* Main remove button with better contrast */
+.remove-btn {
+  background-color: #e74c3c; /* Red for main remove button */
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for the main remove button */
+.remove-btn:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+/* Message when no users are found */
+.no-users {
+  text-align: center;
+  color: #888888; /* Light grey for message text */
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+/* Loading and error message styling */
+.loading, .error {
+  text-align: center;
+  margin-top: 2rem;
+  color: #555555; /* Darker grey for messages */
+  font-size: 1rem;
+}
+
+/* Dropdown with better contrast and focus effect */
+.user-dropdown {
+  margin-top: 1rem;
+}
+
+.user-dropdown button,
+.user-dropdown select {
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect for select dropdown */
+.user-dropdown select:hover {
+  background-color: #f9f9f9;
+}
+
+/* Focus effect for dropdown select */
+.user-dropdown select:focus {
+  background-color: #ffdede;
+  outline: none;
+}
+
+/* Dropdown select options styling */
+.user-dropdown select option {
+  background-color: white;
+  color: #333333; /* Darker text for better contrast */
+}

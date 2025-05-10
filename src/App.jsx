@@ -10,11 +10,14 @@ import Messages from "./pages/messages";
 import Analytics from "./pages/analistics";
 import Chat from "./pages/chat";
 import GroupChat from "./pages/groupChat";
+import UsersForGroup from "./pages/usersForGroup";
+import NavBar from "./components/common/NavBar";
 
 
 function App() {
   return (
     <Router>
+      <NavBar /> 
       <Routes>
         <Route path="/login" element={<Login />} /> 
         <Route path="/register" element={<Register />} /> 
@@ -26,6 +29,7 @@ function App() {
         <Route path="/analistics" element={<Analytics />} /> 
         <Route path="/messages/:userId" element={<Chat />} />
         <Route path="/groupChat/:groupChatId" element={<GroupChat />} />
+        <Route path="/usersForGroup/:groupId" element={<UsersForGroup />} />
       </Routes>
     </Router>
   );

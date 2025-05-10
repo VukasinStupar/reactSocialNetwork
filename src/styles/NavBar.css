@@ -1,0 +1,96 @@
+/* styles/NavBar.css */
+
+/* Overall styling for NavBar */
+.navbar {
+    background-color: #1e1e2f; /* Darker background to match a modern theme */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Softer shadow for depth */
+    padding: 1rem 2rem;  /* Padding to space out the content */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Microsoft-like font */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Container for brand and links */
+  .navbar-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  /* Branding style */
+  .navbar-brand {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+  }
+  
+  /* Links container */
+  .navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;  /* Spacing between buttons */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Link style as modern buttons */
+  .navbar-links a {
+    color: #f1f1f1;  /* Soft white text */
+    text-decoration: none;
+    padding: 12px 20px;  /* Padding to make them look like buttons */
+    border-radius: 8px;  /* Rounded corners */
+    font-weight: 500;
+    font-size: 1rem;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth background transition */
+    position: relative;
+  }
+  
+  /* Default button state (flat design) */
+  .navbar-links a {
+    background-color: #343a40;  /* Dark background for a button-like effect */
+    border: 2px solid transparent; /* No border by default */
+  }
+  
+  /* Hover effect for modern button-like look */
+  .navbar-links a:hover {
+    background-color: #16a34a;  /* Green background on hover */
+    color: white;  /* White text color on hover */
+    transform: translateY(-2px);  /* Slight lift effect */
+    border-color: #16a34a;  /* Green border on hover */
+  }
+  
+  /* Active button effect */
+  .navbar-links a.active {
+    background-color: #16a34a;  /* Green background for active state */
+    color: white;
+    font-weight: 600;
+    transform: translateY(0);  /* Remove lift effect when active */
+    border-color: #16a34a;  /* Green border for active state */
+  }
+  
+  /* Button focus (for accessibility and smooth transitions) */
+  .navbar-links a:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(22, 163, 74, 0.7); /* Green glow effect for focus */
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .navbar-content {
+      justify-content: center;
+    }
+  
+    .navbar-links {
+      gap: 1rem;
+    }
+  }
+  

@@ -1,69 +1,123 @@
-/* styles/chat.css */
+/* General Layout */
+.chatPage {
+  display: flex;
+  height: 100vh;
+  background-color: #f4f7f6; /* Soft background for a modern touch */
+  color: #1a1a1a;
+  font-family: 'Segoe UI', sans-serif;
+  justify-content: center;
+  align-items: center;
+}
 
+/* Chat Container */
 .chatContainer {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 1.5rem;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  flex: 2;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  width: 70%;
+  max-width: 1000px;
 }
 
 .header {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #4CAF50;
-  margin-bottom: 1rem;
+  font-size: 2rem; /* Larger, more modern font size */
+  color: #0078d4; /* Microsoft blue */
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px; /* Slight spacing for modern look */
 }
 
+/* Messages List */
 .messagesList {
-  max-height: 400px;
-  overflow-y: auto;
-  border: 1px solid #ddd;
-  padding: 1rem;
-  border-radius: 8px;
-  background-color: #fafafa;
-}
-
-/* Scrollbar Styling */
-.messagesList::-webkit-scrollbar {
-  width: 6px;
-}
-
-.messagesList::-webkit-scrollbar-thumb {
-  background-color: #c2c2c2;
-  border-radius: 5px;
-}
-
-.inputField {
   width: 100%;
-  padding: 0.8rem 1rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  transition: border-color 0.2s;
+  height: 60vh;
+  overflow-y: auto;
+  background-color: #f4f9fb; /* Subtle off-white for messages */
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 0 12px rgba(0, 120, 212, 0.1); /* Light blue shadow */
+  border: 1px solid #c8e0f7;
+}
+
+/* Input Area */
+.inputArea {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+/* Input Field */
+.inputField {
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: 12px;
+  background-color: #ffffff;
+  border: 1px solid #0078d4; /* Microsoft blue border */
+  color: #1a1a1a;
+  transition: border-color 0.3s ease;
 }
 
 .inputField:focus {
-  border-color: #4CAF50;
+  border-color: #00b0ff; /* Bright blue focus effect */
   outline: none;
 }
 
-.sendButton {
-  background-color: #4CAF50;
+/* Buttons */
+.sendButton, .toggleUsersButton {
+  padding: 0.75rem 1.2rem;
+  background-color: #00b0ff; /* Light blue button */
   color: white;
-  padding: 0.8rem 1.4rem;
   border: none;
-  border-radius: 8px;
-  font-size: 1rem;
+  border-radius: 12px;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.sendButton:hover {
-  background-color: #45a049;
+.sendButton:hover, .toggleUsersButton:hover {
+  background-color: #0099cc; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight scale-up effect */
+}
+
+.sendButton:active, .toggleUsersButton:active {
+  transform: scale(0.98); /* Subtle click effect */
+}
+
+/* Sidebar for Users */
+.usersListSidebar {
+  flex: 1;
+  padding: 2rem 1rem;
+  background-color: #f9f9f9;
+  overflow-y: auto;
+  border-left: 1px solid #e0e0e0;
+  border-radius: 10px;
+}
+
+.usersListSidebar h3 {
+  font-size: 1.5rem;
+  color: #0078d4;
+  margin-bottom: 1rem;
+}
+
+.usersListSidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.usersListSidebar li {
+  font-size: 1rem;
+  padding: 0.5rem;
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.usersListSidebar li:hover {
+  background-color: #f0f9fc;
+  cursor: pointer;
 }

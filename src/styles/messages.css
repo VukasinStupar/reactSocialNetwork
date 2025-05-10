@@ -1,34 +1,49 @@
-/* styles/messages.css */
-
+/* Centering the messages-container */
 .messages-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  }
-  
-  .user-card {
-    background-color: #f9f9f9;
-    border-left: 6px solid #4CAF50;
-    border-radius: 10px;
-    padding: 1.2rem;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .user-card:hover {
-    transform: translateY(-4px);
-  }
-  
-  .user-card p {
-    margin: 0.4rem 0;
-    color: #333;
-    font-size: 0.95rem;
-  }
-  
-  .user-card strong {
-    color: #2e7d32;
-  }
-  
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center; /* Center the grid horizontally */
+  align-items: center; /* Vertically center grid items */
+  min-height: 100vh; /* Full viewport height */
+  text-align: center; /* Center text inside the container */
+}
+
+/* Styling for the individual user-card */
+.user-card {
+  background-color: #f9f9f9;
+  border-left: 6px solid #4CAF50;
+  border-radius: 10px;
+  padding: 1.2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease-in-out;
+  text-align: left; /* Left-align text inside the card */
+  margin: 0 auto; /* Center cards within the grid */
+}
+
+/* Hover effect for the user card */
+.user-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Styling for paragraphs inside user-card */
+.user-card p {
+  margin: 0.4rem 0;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+/* Styling for strong tags inside the user card */
+.user-card strong {
+  color: #2e7d32; /* Green for strong text */
+}
+
+/* Styling for the page header */
+h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
