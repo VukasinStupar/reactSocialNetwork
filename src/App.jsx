@@ -6,12 +6,16 @@ import ActivateAccount from "./pages/activateAccount";
 import CreatePost from "./pages/createPost";
 import AllPosts from "./pages/allPosts";
 import AllUsers from "./pages/allUsers";
-import Messages from "./pages/messages";
 import Analytics from "./pages/analistics";
 import Chat from "./pages/chat";
 import GroupChat from "./pages/groupChat";
 import UsersForGroup from "./pages/usersForGroup";
 import NavBar from "./components/common/NavBar";
+import AllGroupsUserIn from "./pages/allGroupsUserIn";
+import ChattedUsers from "./pages/chattedUsers";
+import UserProfile from "./pages/userProfile";
+//import UserPostsProfile from "./pages/userPostsProfile";
+
 
 
 function App() {
@@ -25,11 +29,14 @@ function App() {
         <Route path="/createPost" element={<CreatePost />} /> 
         <Route path="/allPosts" element={<AllPosts />} /> 
         <Route path="/allUsers" element={<AllUsers />} /> 
-        <Route path="/messagesForUser" element={<Messages />} />
         <Route path="/analistics" element={<Analytics />} /> 
         <Route path="/messages/:userId" element={<Chat />} />
         <Route path="/groupChat/:groupChatId" element={<GroupChat />} />
         <Route path="/usersForGroup/:groupId" element={<UsersForGroup />} />
+        <Route path="/groups" element={<AllGroupsUserIn />} />
+        <Route path="/chattedUsers" element={<ChattedUsers />} />
+        <Route path="/userProfile/:userId" element={< UserProfile/>} />
+        
       </Routes>
     </Router>
   );

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { fetchUsers } from '../services/UserService'; // Adjust the path if necessary
+import { fetchUsers } from '../services/UserService';
+import { useNavigate } from 'react-router-dom'; // <-- import useNavigate
 import "../styles/tables.css";
 
 function AllUsers() {
@@ -7,7 +8,8 @@ function AllUsers() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [page, setPage] = useState(0);
-    const [size, setSize] = useState(2); // You can adjust the page size
+    const [size, setSize] = useState(30);
+    const navigate = useNavigate(); // <-- initialize navigate
 
     useEffect(() => {
         async function getUsers() {
@@ -23,13 +25,12 @@ function AllUsers() {
         getUsers();
     }, [page, size]);
 
-    if (loading) {
-        return <div>Loading...</div>;
-    }
+    if (loading) return <div>Loading...</div>;
+    if (error) return <div>{error}</div>;
 
-    if (error) {
-        return <div>{error}</div>;
-    }
+    const handleRowClick = (userId) => {
+        navigate(`/userProfile/${userId}`);
+    };
 
     return (
         <div>
@@ -44,7 +45,11 @@ function AllUsers() {
                 </thead>
                 <tbody>
                     {users.map(user => (
-                        <tr key={user.id}>
+                        <tr
+                          key={user.id}
+                          onClick={() => handleRowClick(user.id)}
+                          style={{ cursor: 'pointer' }} // to show it's clickable
+                        >
                             <td>{user.name} {user.surname}</td>
                             <td>{user.username}</td>
                             <td>{user.email}</td>

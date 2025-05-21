@@ -4,8 +4,8 @@ import { fetchMessagesWithUser} from '../services/messageService';
 import MessagesList from '../components/MessagesList';
 
 import { useAuth } from '../context/AuthContext';
-import '../styles/chat.css';   // Make sure this file is imported
-import { connectWS, sendMessageWS } from '../services/WebSocketService';
+import '../styles/chat.css';   
+import { connectWS, disconnect, sendMessageWS } from '../services/WebSocketService';
 
 const Chat = () => {
     const { user } = useAuth();

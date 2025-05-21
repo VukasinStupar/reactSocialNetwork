@@ -16,3 +16,7 @@ export async function updatePost(id, data) {
 export async function deletePost(id) {
   return await request(`/api/posts/${id}`, {}, HttpMethod.DELETE);
 }
+
+export async function getUserPostsProfile(userId) {
+    return await request(`/api/posts/displayUserPosts/${userId}`, {}, HttpMethod.GET);
+}

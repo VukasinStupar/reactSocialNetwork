@@ -6,16 +6,17 @@ import { fetchPosts } from "../services/PostService";
 const AllPosts = () => {
   const [posts, setPosts] = useState([]);
   const [page, setPage] = useState(0);
+  const [size, setSize] = useState(30);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     loadPosts();
-  }, []);
+  } ,[]);
 
   const loadPosts = async () => {
     try {
-      const response = await fetchPosts(1, 2);
+      const response = await fetchPosts(page, size);
       setPosts(response.data);
     } catch (error) {
       console.error('Failed to load posts:', error);

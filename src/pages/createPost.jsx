@@ -5,6 +5,7 @@ import { MapContainer, TileLayer, useMapEvent } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { LatLng } from "leaflet";
 import DraggableMarker from "./draggableMarker";
+import { createPost } from "../services/PostService";
 
 const center = new LatLng(45.048775, 20.063703);
 
@@ -60,7 +61,22 @@ const CreatePost = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // Add your logic here
+    
+    
+    const formData = new FormData();
+    formData.append("description", post.description);
+    formData.append("bunnyImage", bunnyImage);
+
+    try {
+          await createPost(formData); 
+          
+      } catch (error) {
+        window.alert(error.message);
+      }
+
+
+    
+      
   };
 
   return (

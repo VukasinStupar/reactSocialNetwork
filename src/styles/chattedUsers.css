@@ -1,0 +1,16 @@
+.user-item {
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  color: black;
+  background-color: #f0fdf4;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border-left: 6px solid #22c55e;
+  transition: transform 0.2s, background-color 0.2s;
+  cursor: pointer; /* Added cursor to indicate clickable */
+}
+
+.user-item:hover {
+  transform: scale(1.02); /* Slightly increases size on hover */
+  background-color: #dcfce7; /* Light green background on hover */
+}
