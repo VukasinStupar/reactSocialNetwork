@@ -12,7 +12,11 @@ const Message = ({ message }) => {
             <div className={`message-bubble ${isSentByUser ? 'sent-bubble' : 'received-bubble'}`}>
                 <p className="message-text">{message.text}</p>
                 <span className="message-time">
-                    {new Date(message.sendTimeStr).toLocaleString()}
+                    <span className="message-time">
+                    {new Date(message.sendTime.includes(':') && message.sendTime.length === 16 ? message.sendTime + ':00' : message.sendTime)
+                    .toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                </span>
+
                 </span>
             </div>
         </div>

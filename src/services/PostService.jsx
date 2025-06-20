@@ -20,3 +20,17 @@ export async function deletePost(id) {
 export async function getUserPostsProfile(userId) {
     return await request(`/api/posts/displayUserPosts/${userId}`, {}, HttpMethod.GET);
 }
+
+export async function toggleLike(postId) {
+  return await request('/api/likes', { postId }, HttpMethod.POST);
+}
+
+export async function fetchPostById(postId) {
+  return await request(`/api/posts/${postId}`, {},HttpMethod.GET);
+}
+
+export async function addComment(postId, text) {
+  return await request(`/api/comments`, { postId, text }, HttpMethod.POST);
+}
+
+

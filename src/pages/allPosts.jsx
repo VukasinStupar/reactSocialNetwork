@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect, useState } from "react"; 
+import { useNavigate } from "react-router-dom";
 import "../styles/allPosts.css";
-import { fetchPosts } from "../services/PostService";
+import { fetchPosts, toggleLike } from "../services/PostService";
 
 const AllPosts = () => {
   const [posts, setPosts] = useState([]);
@@ -10,19 +10,39 @@ const AllPosts = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     loadPosts();
-  } ,[]);
+  }, [page]);
 
   const loadPosts = async () => {
+    setLoading(true);
     try {
       const response = await fetchPosts(page, size);
       setPosts(response.data);
+      setError(null);
     } catch (error) {
-      console.error('Failed to load posts:', error);
+      console.error("Failed to load posts:", error);
+      setError("Failed to load posts.");
+    } finally {
+      setLoading(false);
     }
   };
- 
+
+  const handleLike = async (postId, e) => {
+    e.stopPropagation(); // zaustavi propagaciju da se ne otvori detalj posta
+    try {
+      await toggleLike(postId);
+      await loadPosts();
+    } catch (error) {
+      console.error("Failed to toggle like:", error);
+    }
+  };
+
+  const handlePostClick = (postId) => {
+    navigate(`/postDetails/${postId}`);
+  };
 
   const handlePrevious = () => {
     setPage((prev) => Math.max(prev - 1, 0));
@@ -41,16 +61,28 @@ const AllPosts = () => {
     <div className="container">
       {loading && <p>Loading posts...</p>}
       {error && <p className="error">{error}</p>}
-
       {!loading && !error && posts.length === 0 && <p>No posts available.</p>}
 
       {posts.map((post) => (
-        <div className="post" key={post.id}>
+        <div
+          className="post"
+          key={post.id}
+          onClick={() => handlePostClick(post.id)}
+          style={{ cursor: "pointer" }}
+        >
           <img src={post.bunnyImage} alt="Bunny" />
-          <h2>{post.username || "Unknown User"}</h2> {/* Safe access to user.name */}
+          <h2>{post.username || "Unknown User"}</h2>
           <p>{post.description}</p>
-          <p>{formatDate(post.createdAt)}</p> {/* Format date safely */}
+          <p>{formatDate(post.createdAt)}</p>
           <p className="likes">{post.likes} Likes</p>
+
+          {/* Dugme za Like/Dislike sa zaustavljanjem propagacije */}
+          <button
+            onClick={(e) => handleLike(post.id, e)}
+            className="like-button"
+          >
+            👍 Like / Dislike
+          </button>
         </div>
       ))}
 

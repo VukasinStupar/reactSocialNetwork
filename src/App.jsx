@@ -14,6 +14,7 @@ import NavBar from "./components/common/NavBar";
 import AllGroupsUserIn from "./pages/allGroupsUserIn";
 import ChattedUsers from "./pages/chattedUsers";
 import UserProfile from "./pages/userProfile";
+import PostDetails from "./pages/postDetails";
 //import UserPostsProfile from "./pages/userPostsProfile";
 
 
@@ -36,6 +37,7 @@ function App() {
         <Route path="/groups" element={<AllGroupsUserIn />} />
         <Route path="/chattedUsers" element={<ChattedUsers />} />
         <Route path="/userProfile/:userId" element={< UserProfile/>} />
+        <Route path="/postDetails/:postId" element={< PostDetails/>} />
         
       </Routes>
     </Router>
