@@ -1,183 +1,209 @@
-/* userProfile.css */
-
-/* General layout for the user profile */
+/* Container */
 .user-profile-container {
-  width: 100%;
   max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
-  font-family: 'Segoe UI', sans-serif; /* Windows-style font */
-  background-color: #f0f2f5; /* Light gray background similar to modern UIs */
-  display: flex;
-  flex-direction: column;
+  margin: 40px auto;
+  padding: 30px 35px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  color: #222;
 }
 
-/* User Profile Section */
-.user-profile {
-  background-color: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 1px 24px rgba(0, 0, 0, 0.08);
-  padding: 20px;
-  margin-bottom: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  transition: box-shadow 0.3s ease-in-out;
-}
-
-.user-profile:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15), 0 1px 30px rgba(0, 0, 0, 0.1);
-}
-
+/* Header */
 .user-profile h2 {
   font-size: 28px;
+  text-align: center;
+  color: #222;
+  margin-bottom: 28px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Profile details */
+.profile-details {
+  padding: 20px 25px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-around;
+  font-size: 16px;
   font-weight: 600;
-  color: #222222; /* Dark text for readability */
-  margin-bottom: 15px;
+  color: #222;
 }
 
 .profile-details p {
+  margin: 0;
+}
+
+/* Buttons container */
+.follow-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 30px 0;
+}
+
+.follow-buttons button {
+  background: #0095f6;
+  color: white;
+  border: none;
+  padding: 10px 26px;
+  border-radius: 6px;
   font-size: 16px;
-  color: #333333; /* Slightly lighter for readability */
-  margin: 8px 0;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  box-shadow: 0 2px 5px rgba(0, 149, 246, 0.6);
+  user-select: none;
 }
 
-.profile-details strong {
-  color: #3b82f6; /* Blue for emphasis */
+.follow-buttons button:hover {
+  background: #007acc;
+  box-shadow: 0 4px 10px rgba(0, 122, 204, 0.8);
 }
 
-/* User Posts Section */
-.user-posts-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.follow-buttons button:active {
+  background: #005ea3;
+  box-shadow: none;
 }
 
-.user-post-card {
-  background-color: #ffffff;
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), 0 1px 24px rgba(0, 0, 0, 0.08);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+/* Follow List container */
+.follow-list {
+  margin-top: 20px;
+  padding: 0 15px;
+  background: #e6f0fb; /* svetlo plava pozadina */
+  border-radius: 8px;
+  border: 1px solid #3399ff; /* plavi okvir */
+}
+
+/* Follow List Title */
+.follow-list h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0095f6;
+  margin-bottom: 18px;
+  user-select: none;
+}
+
+/* Table styles */
+.follow-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  color: #222;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+  border-radius: 8px;
   overflow: hidden;
-  transition: box-shadow 0.3s ease-in-out;
+  background: #cce4fc; /* još svetlija plava za tabelu */
+}
+
+/* Table header */
+.follow-table thead tr {
+  background-color: #daf0ff;
+  border-bottom: 2px solid #0095f6;
+}
+
+.follow-table thead th {
+  padding: 14px 20px;
+  text-align: left;
+  font-weight: 700;
+  color: #0071ce;
+  user-select: none;
+}
+
+/* Table body rows */
+.follow-table tbody tr {
+  border-bottom: 1px solid #a3c6f9;
+  transition: background-color 0.3s ease;
+  cursor: default;
+}
+
+.follow-table tbody tr:hover {
+  background-color: #b8d4ff; /* jači plavi hover */
+}
+
+/* Zebra striping */
+.follow-table tbody tr:nth-child(even) {
+  background-color: #d9e9ff;
+}
+
+/* Table cells */
+.follow-table tbody td {
+  padding: 14px 20px;
+  vertical-align: middle;
+}
+
+/* Posts container */
+.user-posts-container {
+  margin-top: 40px;
+}
+
+/* Post card */
+.user-post-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 28px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  color: #222;
+  user-select: none;
 }
 
 .user-post-card:hover {
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1), 0 1px 32px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  transform: translateY(-6px);
 }
 
+/* Post header */
 .user-post-header {
   display: flex;
   justify-content: space-between;
-  width: 100%;
   font-size: 14px;
-  color: #666666; /* Soft gray for less important text */
+  color: #555;
+  margin-bottom: 14px;
 }
 
-.user-post-header .username {
-  font-weight: 600;
-  color: #3b82f6; /* Blue for the username */
+.username {
+  font-weight: 700;
+  color: #222;
 }
 
-.user-post-header .timestamp {
-  color: #888888;
+.message-time {
+  font-style: italic;
+  font-weight: 400;
 }
 
+/* Post description */
 .description {
   font-size: 16px;
-  margin-top: 10px;
-  color: #333333;
-  line-height: 1.5;
+  margin-bottom: 14px;
+  line-height: 1.4;
+  user-select: text;
 }
 
-.image-container {
-  width: 100%;
-  margin-top: 15px;
-}
-
+/* Post image */
 .image-container img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
-  transition: transform 0.3s ease-in-out;
+  max-width: 100%;
+  border-radius: 12px;
+  margin-top: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  user-select: none;
 }
 
-.image-container img:hover {
-  transform: scale(1.05); /* Subtle zoom effect on hover */
-}
-
+/* Likes */
 .likes {
   font-size: 14px;
-  color: #444444;
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  font-weight: 500;
-}
-
-.likes svg {
-  margin-right: 5px;
-}
-
-/* No posts available message */
-.no-posts {
-  font-size: 16px;
-  color: #888888;
-  text-align: center;
-}
-
-/* Loader and Error Messages */
-.loading, .error {
-  font-size: 16px;
-  color: #ff4d4d; /* Red for error messages */
-  text-align: center;
-  margin-top: 20px;
-}
-
-/* Buttons and Links */
-button, a {
-  color: #ffffff;
-  background-color: #3b82f6; /* Instagram-inspired blue */
-  padding: 12px 20px;
-  border-radius: 8px;
-  text-decoration: none;
+  color: #222;
+  margin-top: 12px;
   font-weight: 600;
-  border: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-button:hover, a:hover {
-  background-color: #2563eb; /* Slightly darker blue on hover */
-  transform: translateY(-2px); /* Subtle lift effect */
-}
-
-/* Responsive styling */
-@media (max-width: 768px) {
-  .user-profile-container {
-    padding: 10px;
-  }
-
-  .user-profile h2 {
-    font-size: 24px;
-  }
-
-  .profile-details p {
-    font-size: 14px;
-  }
-
-  .user-post-card {
-    padding: 15px;
-  }
-
-  .description {
-    font-size: 14px;
-  }
-
-  .likes {
-    font-size: 12px;
-  }
+/* No posts message */
+.no-posts {
+  text-align: center;
+  font-style: italic;
+  color: #999;
+  margin-top: 30px;
+  user-select: none;
 }
